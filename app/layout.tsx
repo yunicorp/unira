@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Lato } from "next/font/google";
 import "./globals.css";
 
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     description: "Step into the world where conversations spark connections!",
 };
 
+export const viewport: Viewport = {
+    themeColor: "#ab8aed",
+};
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -27,9 +31,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.variable} ${lato.variable}`}>
-                {children}
-            </body>
+            <body className={`${inter.variable} ${lato.variable}`}>{children}</body>
         </html>
     );
 }
