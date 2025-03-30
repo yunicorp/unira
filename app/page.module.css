@@ -1,31 +1,36 @@
-.HomePage-Cnt {
-  height: 100vh;
-  background: linear-gradient(150deg, #6c48b6, #ede4ff);
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 30px;
+    min-height: 100dvh;
+    padding: 0 26px min(10svh, 86px);
+    /* background: linear-gradient(150deg, #9f7ee0, #ede4ff 60%); */
+    background: linear-gradient(140deg, var(--color-primary-container), var(--color-surface) 55%);
+
+    font-size: 1.5rem;
+
+    & > section {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    & h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+    }
+
+    & h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
 }
 
-.logo-image {
-  height: 350px;
-  width: 200px;
-
-  margin-left: 20px;
-  margin-top: 20px;
-}
-.random-Greeting {
-  margin: 20px;
-}
-.title {
-  margin: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 80px;
-}
-.about {
-  margin: 20px;
-}
-.started-link {
-  margin: 20px;
-  text-decoration: none;
-}
-.explore {
-  margin-left: 20px;
-  text-decoration: dotted;
+.mascot {
+    /* image-rendering: pixelated; */
+    margin-bottom: 0.5rem;
 }
