@@ -4,7 +4,7 @@
     justify-content: end;
     gap: 30px;
     min-height: 100dvh;
-    padding: 0 26px min(10svh, 86px);
+    padding: 0 32px min(50%, 86px);
 
     font-size: 1.5rem;
     text-align: center;
