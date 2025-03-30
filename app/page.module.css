@@ -1,0 +1,31 @@
+.HomePage-Cnt {
+  height: 100vh;
+  background: linear-gradient(150deg, #6c48b6, #ede4ff);
+}
+
+.logo-image {
+  height: 350px;
+  width: 200px;
+
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.random-Greeting {
+  margin: 20px;
+}
+.title {
+  margin: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 80px;
+}
+.about {
+  margin: 20px;
+}
+.started-link {
+  margin: 20px;
+  text-decoration: none;
+}
+.explore {
+  margin-left: 20px;
+  text-decoration: dotted;
+}
