@@ -63,6 +63,7 @@
     --motion-duration-extra-long4: 1000ms;
 
     accent-color: var(--color-primary);
+    touch-action: pan-x pan-y;
 }
 
 html,
