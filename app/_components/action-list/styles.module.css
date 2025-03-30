@@ -1,7 +1,6 @@
 .list > li {
     list-style: none;
     width: fit-content;
-    margin: 0 auto;
 
     & > a {
         display: inline-block;
@@ -22,8 +21,21 @@
         content: "or";
         display: inline-block;
         text-decoration: none;
-        margin-right: 0.3em;
+        margin-inline-end: 0.3em;
     }
+}
+
+.list[data-align="left"] > li {
+    margin-inline-end: auto;
+}
+
+.list[data-align="center"] > li {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+.list[data-align="right"] > li {
+    margin-inline-start: auto;
 }
 
 .indicator {

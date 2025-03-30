@@ -43,6 +43,7 @@ export default function Home() {
 
             <section className={styles.actions}>
                 <ActionList
+                    align="center"
                     actions={[
                         {
                             label: "Get Started",

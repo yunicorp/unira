@@ -10,20 +10,15 @@ type Action = {
     readonly primary?: boolean;
 };
 
-type Position = {
-    top?: number;
-    left?: number;
-    width?: number;
-    height?: number;
-};
+type Align = "left" | "center" | "right";
 
-export default function ActionList({ actions }: { actions: Action[] }) {
+export default function ActionList({ actions, align = "left" }: { actions: Action[]; align?: Align }) {
     // Check for hover support and animation preferences
     const [isHoverWanted] = useState(() =>
         window.matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)")
     );
 
-    const primaryActionRef = useRef<HTMLAnchorElement>(null);
+    const primaryActionRef = useRef(null);
     const [highlightedAction, setHighlightedAction] = useState<HTMLElement | null>(null);
 
     // Default highlight should be the primary action
@@ -31,7 +26,7 @@ export default function ActionList({ actions }: { actions: Action[] }) {
         setHighlightedAction(primaryActionRef.current);
     }, []);
 
-    const [indicatorPosition, setIndicatorPosition] = useState<Position>({});
+    const [indicatorPosition, setIndicatorPosition] = useState({});
 
     // Update indicator position when highlighted action changes
     useEffect(() => {
@@ -55,7 +50,7 @@ export default function ActionList({ actions }: { actions: Action[] }) {
 
     return (
         <nav>
-            <ul className={styles.list}>
+            <ul className={styles.list} data-align={align}>
                 {actions.map(action => (
                     <li key={action.label}>
                         <Link
