@@ -5,20 +5,17 @@
     gap: 30px;
     min-height: 100dvh;
     padding: 0 26px min(10svh, 86px);
-    background: linear-gradient(140deg, var(--color-primary-container), var(--color-surface) 55%);
 
     font-size: 1.5rem;
     text-align: center;
 
-    & .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    & .actions {
-        font-size: 1.3rem;
+    background: linear-gradient(
+        var(--gradient-rotation),
+        var(--color-primary-container),
+        var(--color-surface) var(--gradient-stop)
+    );
+    @media (prefers-reduced-motion: no-preference) {
+        animation: animate-gradient 5s linear infinite alternate;
     }
 
     & h1 {
@@ -32,6 +29,40 @@
     }
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.actions {
+    font-size: 1.3rem;
+}
+
 .mascot {
     margin-bottom: 0.5rem;
+}
+
+@property --gradient-rotation {
+    syntax: "<angle>";
+    initial-value: 140deg;
+    inherits: false;
+}
+
+@property --gradient-stop {
+    syntax: "<percentage>";
+    initial-value: 55%;
+    inherits: false;
+}
+
+@keyframes animate-gradient {
+    from {
+        --gradient-rotation: 140deg;
+        --gradient-stop: 55%;
+    }
+    to {
+        --gradient-rotation: 220deg;
+        --gradient-stop: 90%;
+    }
 }
