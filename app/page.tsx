@@ -45,12 +45,12 @@ export default function Home() {
                 <ActionList
                     actions={[
                         {
-                            label: <span>Get Started</span>,
+                            label: "Get Started",
                             href: "/login",
                             primary: true,
                         },
                         {
-                            label: <span>explore first!</span>,
+                            label: "explore first!",
                             href: "/explore",
                         },
                     ]}

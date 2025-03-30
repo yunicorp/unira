@@ -1,4 +1,4 @@
-.list-item {
+.list > li {
     list-style: none;
     width: fit-content;
     margin: 0 auto;
@@ -6,7 +6,6 @@
     & > a {
         display: inline-block;
         padding: 0.9rem 1.8rem;
-        /* margin-left: -0.8rem; */
         text-decoration: none;
         color: inherit;
     }
@@ -17,7 +16,6 @@
 
     & > a:not([data-primary="true"]) {
         text-decoration: underline wavy currentColor;
-        text-underline-offset: 5px;
     }
 
     & > a:not([data-primary="true"])::before {

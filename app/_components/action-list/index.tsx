@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import styles from "./styles.module.css";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Action = {
-    readonly label: ReactNode;
+    readonly label: string;
     readonly href: string;
     readonly primary?: boolean;
 };
@@ -57,7 +57,7 @@ export default function ActionList({ actions }: { actions: Action[] }) {
         <nav>
             <ul className={styles.list}>
                 {actions.map(action => (
-                    <li key={action.href} className={styles["list-item"]}>
+                    <li key={action.label}>
                         <Link
                             href={action.href}
                             data-primary={action.primary}
