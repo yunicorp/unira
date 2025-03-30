@@ -5,18 +5,20 @@
     gap: 30px;
     min-height: 100dvh;
     padding: 0 26px min(10svh, 86px);
-    /* background: linear-gradient(150deg, #9f7ee0, #ede4ff 60%); */
     background: linear-gradient(140deg, var(--color-primary-container), var(--color-surface) 55%);
 
     font-size: 1.5rem;
+    text-align: center;
 
-    & > section {
+    & .header {
         display: flex;
         flex-direction: column;
-        justify-content: end;
         align-items: center;
-        text-align: center;
         gap: 10px;
+    }
+
+    & .actions {
+        font-size: 1.3rem;
     }
 
     & h1 {
@@ -31,6 +33,5 @@
 }
 
 .mascot {
-    /* image-rendering: pixelated; */
     margin-bottom: 0.5rem;
 }

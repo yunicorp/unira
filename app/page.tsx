@@ -24,17 +24,16 @@ const greetings = [
 
 export default function Home() {
     const [randomGreeting] = useState(() => greetings[Math.floor(Math.random() * greetings.length)]);
-    // const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
 
     return (
         <main className={styles.main}>
-            <section>
+            <section className={styles.header}>
                 <Image
+                    className={styles.mascot}
                     src="/mascot.webp"
                     alt="Cartoon of a happy student"
                     width={190}
                     height={301}
-                    className={styles.mascot}
                     priority
                 />
                 <h2>{randomGreeting}</h2>
@@ -42,7 +41,7 @@ export default function Home() {
                 <p>Step into the world where conversations spark connections!</p>
             </section>
 
-            <section style={{ fontSize: "1.3rem" }}>
+            <section className={styles.actions}>
                 <ActionList
                     actions={[
                         {
