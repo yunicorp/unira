@@ -14,7 +14,7 @@
     }
 
     & > a:not([data-primary="true"]) {
-        text-decoration: underline wavy currentColor;
+        text-decoration: underline wavy currentColor 0.05em;
     }
 
     & > a:not([data-primary="true"])::before {
