@@ -14,18 +14,9 @@
         var(--color-primary-container),
         var(--color-surface) var(--gradient-stop)
     );
+
     @media (prefers-reduced-motion: no-preference) {
         animation: animate-gradient 5s linear infinite alternate;
-    }
-
-    & h1 {
-        font-size: 3.5rem;
-        font-weight: 900;
-    }
-
-    & h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
     }
 }
 
