@@ -5,14 +5,14 @@ import "./globals.css";
 const inter = Inter({
     variable: "--font-inter",
     subsets: ["latin"],
-    fallback: ["system-ui", "Segoe UI", "Roboto", "Arial"],
+    fallback: ["system-ui", "Segoe UI", "Roboto", "Arial", "sans-serif"],
 });
 
 const lato = Lato({
     variable: "--font-lato",
     weight: ["100", "300", "400", "700", "900"],
     subsets: ["latin"],
-    fallback: ["system-ui", "Segoe UI", "Roboto", "Arial"],
+    fallback: ["system-ui", "Segoe UI", "Roboto", "Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {
