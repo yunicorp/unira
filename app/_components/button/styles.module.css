@@ -1,0 +1,45 @@
+.button {
+    background: var(--color-on-background);
+    color: var(--color-background);
+    /* font-weight: 600; */
+
+    transition: scale var(--motion-duration-short2) var(--motion-easing-emphasized);
+
+    &:active {
+        scale: 0.98;
+    }
+
+    /* Variants */
+
+    &[data-width="min"] {
+        width: min-content;
+    }
+
+    &[data-width="hug"] {
+        width: fit-content;
+    }
+
+    &[data-width="fill"] {
+        width: 100%;
+    }
+
+    &[data-height="min"] {
+        padding-block: 0.65rem;
+    }
+
+    &[data-height="hug"] {
+        padding-block: 0.9rem;
+    }
+
+    &[data-height="fill"] {
+        height: 100%;
+    }
+
+    &[data-density="default"] {
+        padding-inline: 1.4rem;
+    }
+
+    &[data-density="compact"] {
+        padding-inline: 1rem;
+    }
+}
