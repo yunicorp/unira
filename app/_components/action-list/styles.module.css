@@ -8,19 +8,19 @@
         font-weight: inherit;
 
         &[data-primary="true"] {
-        font-weight: bold;
-    }
+            font-weight: bold;
+        }
 
         &:not([data-primary="true"]) {
-        text-decoration: underline wavy currentColor 0.05em;
+            text-decoration: underline wavy currentColor 0.05em;
 
             &::before {
-        content: "or";
-        display: inline-block;
-        text-decoration: none;
-        margin-inline-end: 0.3em;
-    }
-}
+                content: "or";
+                display: inline-block;
+                text-decoration: none;
+                margin-inline-end: 0.3em;
+            }
+        }
     }
 }
 
