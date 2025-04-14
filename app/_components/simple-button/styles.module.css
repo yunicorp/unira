@@ -1,0 +1,23 @@
+.button {
+    all: unset;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: inherit;
+    text-align: center;
+    border-radius: 100vh;
+
+    pointer-events: all;
+    cursor: pointer;
+
+    padding: 2px;
+    box-sizing: border-box;
+
+    &:focus-visible {
+        outline: 2px solid var(--color-tertiary);
+        outline-offset: 2px;
+    }
+}
