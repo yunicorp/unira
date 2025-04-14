@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Button from "@/_components/button";
 import styles from "./styles.module.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -53,7 +53,7 @@ export default function ActionList({ actions, align = "left" }: { actions: Actio
             <ul className={styles.list} data-align={align}>
                 {actions.map(action => (
                     <li key={action.label}>
-                        <Link
+                        <Button
                             href={action.href}
                             data-primary={action.primary}
                             ref={action.primary ? primaryActionRef : undefined}
@@ -63,7 +63,7 @@ export default function ActionList({ actions, align = "left" }: { actions: Actio
                             onBlur={_ => isHoverWanted.matches && setHighlightedAction(primaryActionRef.current)}
                         >
                             {action.label}
-                        </Link>
+                        </Button>
                     </li>
                 ))}
             </ul>

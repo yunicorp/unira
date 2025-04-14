@@ -2,26 +2,25 @@
     list-style: none;
     width: fit-content;
 
-    & > a {
-        display: inline-block;
-        padding: 0.9rem 1.8rem;
-        text-decoration: none;
+    & > * {
+        background: transparent;
         color: inherit;
-    }
+        font-weight: inherit;
 
-    & > a[data-primary="true"] {
+        &[data-primary="true"] {
         font-weight: bold;
     }
 
-    & > a:not([data-primary="true"]) {
+        &:not([data-primary="true"]) {
         text-decoration: underline wavy currentColor 0.05em;
-    }
 
-    & > a:not([data-primary="true"])::before {
+            &::before {
         content: "or";
         display: inline-block;
         text-decoration: none;
         margin-inline-end: 0.3em;
+    }
+}
     }
 }
 
