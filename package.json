@@ -10,6 +10,8 @@
     },
     "dependencies": {
         "@splidejs/react-splide": "^0.7.12",
+        "bcryptjs": "^3.0.2",
+        "jose": "^6.0.10",
         "mongoose": "^8.13.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
