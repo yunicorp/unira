@@ -14,8 +14,35 @@ export default function Login() {
     const searchParams = useSearchParams();
     const [email, setEmail] = useState(searchParams.get("email") ?? "");
 
+    const [firstName, setFirstName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+
+    // Fetch/update first name on email change
+    useEffect(() => {
+        if (!email) {
+            setFirstName("");
+            return;
+        }
+
+        const controller = new AbortController();
+        const signal = controller.signal;
+
+        fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/get-user-details?email=${encodeURIComponent(email)}`, {
+            signal,
+        })
+            .then(async response => {
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error);
+
+                setFirstName(data.name.split(" ")[0]);
+            })
+            .catch(_ => {
+                setFirstName("");
+            });
+
+        return () => controller.abort();
+    }, [email]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -49,7 +76,7 @@ export default function Login() {
                 </SimpleButton>
             </nav>
             <main className={styles.main}>
-                <h1>Login</h1>
+                <h1>{firstName ? `Is it you, ${firstName}?` : "Login"}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.fields}>
                         <TextInput
