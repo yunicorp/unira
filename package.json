@@ -9,6 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@material-design-icons/font": "^0.14.15",
         "@splidejs/react-splide": "^0.7.12",
         "bcryptjs": "^3.0.2",
         "jose": "^6.0.10",

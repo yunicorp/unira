@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import ActionList from "@/_components/action-list";
@@ -26,7 +26,7 @@ export default function Home() {
                     actions={[
                         {
                             label: "Get Started",
-                            href: "/login",
+                            href: "/auth",
                             primary: true,
                         },
                         {
