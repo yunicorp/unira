@@ -11,6 +11,7 @@ import styles from "./page.module.css";
 export default function Auth() {
     const searchParams = useSearchParams();
     const [email, setEmail] = useState(searchParams.get("email") || "");
+    const [error, setError] = useState("");
 
     return (
         <div className={styles.app}>
@@ -22,14 +23,21 @@ export default function Auth() {
             </nav>
             <main className={styles.main}>
                 <h1>Login or Register</h1>
-                <form>
-                    <TextInput
-                        type="text"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        autoFocus
-                    />
+                    <div>
+                        <TextInput
+                            type="text"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            autoFocus
+                        />
+                        {error && (
+                            <p className={styles.error}>
+                                <span className="material-icons-outlined">error</span>
+                                {error}
+                            </p>
+                        )}
+                    </div>
                     <Button type="submit" width="fill">
                         Continue
                     </Button>

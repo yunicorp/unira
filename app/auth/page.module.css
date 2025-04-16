@@ -27,3 +27,12 @@
         gap: 1.25rem;
     }
 }
+
+.error {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+
+    color: var(--color-error);
+    margin-block-start: 0.4em;
+}
