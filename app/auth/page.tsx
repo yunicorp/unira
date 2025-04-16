@@ -27,7 +27,7 @@ export default function Auth() {
 
                 if (!response.ok) throw new Error(data.error);
 
-                if (data.accountCreated) router.push(`/auth/login?email=${encodeURIComponent(email)}`);
+                if (data.accountActivated) router.push(`/auth/login?email=${encodeURIComponent(email)}`);
                 else router.push(`/auth/register?email=${encodeURIComponent(email)}`);
             })
             .catch(err => {
@@ -52,6 +52,7 @@ export default function Auth() {
                             placeholder="Enter your email"
                             value={email}
                             onChange={e => setEmail(e.target.value)}
+                            required
                             autoFocus
                         />
                         {error && (
