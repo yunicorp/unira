@@ -12,7 +12,7 @@
         }
 
         &:not([data-primary="true"]) {
-            text-decoration: underline wavy currentColor 0.05em;
+            /* text-decoration: underline wavy currentColor 0.05em; */
 
             &::before {
                 content: "or";

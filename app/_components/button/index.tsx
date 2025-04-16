@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import styles from "./styles.module.css";
-import Link from "next/link";
 import SimpleButton from "../simple-button";
 
 type WidthPreference = "min" | "hug" | "fill";

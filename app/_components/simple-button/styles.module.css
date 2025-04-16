@@ -1,4 +1,5 @@
-.button {
+/* Lower specificity of SimpleButton's styles */
+:where(.button) {
     all: unset;
 
     display: inline-flex;
