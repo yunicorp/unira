@@ -1,0 +1,38 @@
+.app {
+    min-height: 100dvh;
+    background: linear-gradient(#d1b9ff, #f2eefa 30%);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 0 16px;
+}
+
+.main {
+    padding: 0 32px;
+
+    & > h1 {
+        margin-block: 4rem;
+        font-size: 2em;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    & > form {
+        font-size: 1.25em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+
+    color: var(--color-error);
+    margin-block-start: 0.4em;
+}
