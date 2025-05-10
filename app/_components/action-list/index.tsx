@@ -59,8 +59,8 @@ export default function ActionList({ actions, align = "left" }: { actions: Actio
                             ref={action.primary ? primaryActionRef : undefined}
                             onMouseEnter={e => isHoverWanted.matches && setHighlightedAction(e.currentTarget)}
                             onMouseLeave={_ => isHoverWanted.matches && setHighlightedAction(primaryActionRef.current)}
-                            onFocus={e => isHoverWanted.matches && setHighlightedAction(e.currentTarget)}
-                            onBlur={_ => isHoverWanted.matches && setHighlightedAction(primaryActionRef.current)}
+                            onFocus={e => setHighlightedAction(e.currentTarget)}
+                            onBlur={_ => setHighlightedAction(primaryActionRef.current)}
                         >
                             {action.label}
                         </Button>
