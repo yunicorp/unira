@@ -1,0 +1,239 @@
+/* Post Container */
+.post-container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  padding: 24px;
+  margin-bottom: 16px;
+  max-width: 448px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.post-author-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-author-name-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post-username {
+  font-weight: 500;
+  color: #111827;
+}
+
+.post-follow-btn {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.post-follow-btn:hover {
+  background-color: #d1d5db;
+}
+
+.post-follow-btn.following {
+  background-color: #1f2937;
+  color: white;
+}
+
+.post-timestamp {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.post-menu-container {
+  position: relative;
+}
+
+.post-menu-btn {
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.post-menu-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.post-menu-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+}
+
+.post-menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  width: 192px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 4px 0;
+  z-index: 10;
+}
+
+.post-menu-item {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.post-menu-item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Content */
+.post-content {
+  margin-bottom: 16px;
+}
+
+.post-text {
+  color: #111827;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  margin: 0 0 12px 0;
+}
+
+.post-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.post-hashtag {
+  color: #2563eb;
+  font-size: 14px;
+  cursor: pointer;
+  transition: text-decoration 0.2s;
+}
+
+.post-hashtag:hover {
+  text-decoration: underline;
+}
+
+.post-image-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-image {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+}
+
+/* Stats */
+.post-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* Actions */
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.post-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.post-action-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.post-action-btn.liked {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.post-action-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.post-action-icon.filled {
+  fill: currentColor;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .post-container {
+    margin: 0 16px 16px 16px;
+    max-width: none;
+  }
+
+  .post-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .post-action-btn {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+}
