@@ -134,7 +134,7 @@ const Post: React.FC<PostProps> = ({
 
       {/* Stats */}
       <div className="post-stats">
-        <span>{post.likes} upvote</span>
+        <span>{post.likes} {post.likes === 1 ? "upvote" : "upvotes"}</span>
         <span>{post.comments} notes</span>
       </div>
 
