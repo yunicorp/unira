@@ -10,9 +10,9 @@ import {
   Search,
   Plus,
 } from "lucide-react";
-import Post from "../_components/post";
-import "./style.css";
+import Post from "@/_components/post";
 import BottomNav from "@/_components/buttonNav";
+import "./style.css";
 
 type PostType = {
   id: string;
