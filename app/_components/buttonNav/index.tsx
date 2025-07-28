@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { Home, Search, MessageSquare, User, Link } from "lucide-react";
+import Link from "next/link";
+import { Home, Search, MessageSquare, User } from "lucide-react";
 import "./style.css";
 
 interface BottomNavProps {
