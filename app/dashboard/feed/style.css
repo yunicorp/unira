@@ -11,6 +11,10 @@
   padding: 16px 0;
 }
 
+.gptSearch {
+  text-decoration: none;
+}
+
 .feed-layout {
   display: flex;
   flex-direction: column;

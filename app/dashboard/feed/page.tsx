@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Users, Camera, MessageSquare } from "lucide-react";
 import Post from "../../_components/post";
+import Link from "next/link";
 import "./style.css";
 
 type PostType = {
@@ -132,10 +133,12 @@ const Feed = () => {
             <div className="sidebar-card">
               <h2 className="sidebar-title">Quick Actions</h2>
               <div className="sidebar-actions">
-                <button className="sidebar-action-btn">
-                  <MessageSquare className="sidebar-action-icon question" />
-                  <span>Ask a Question</span>
-                </button>
+                <Link href="/dashboard/feed/gptSearch" className="gptSearch">
+                  <button className="sidebar-action-btn">
+                    <MessageSquare className="sidebar-action-icon question" />
+                    <span>Ask a Question</span>
+                  </button>
+                </Link>
                 <button className="sidebar-action-btn">
                   <Users className="sidebar-action-icon study" />
                   <span>Find Study Groups</span>
