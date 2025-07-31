@@ -1,51 +1,33 @@
 "use client";
 
 import React from "react";
-import { Home, Search, MessageSquare, User, Link } from "lucide-react";
+import { Home, Search, MessageSquare, User } from "lucide-react";
+import Link from "next/link";
 import "./style.css";
 
-interface BottomNavProps {
-  activeTab: string;
-  onTabChange: (tab: string) => void;
-}
+const BottomNav: React.FC = () => {
+    return (
+        <nav className="bottom-nav">
+            <Link href="/dashboard" className="bottom-nav-item">
+                <Home className="bottom-nav-icon" />
+                {/* <span>Home</span> */}
+            </Link>
 
-const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) => {
-  return (
-    <nav className="bottom-nav">
-      <button
-        className={`bottom-nav-item ${activeTab === "home" ? "active" : ""}`}
-        onClick={() => onTabChange("home")}
-      >
-        <Home className="bottom-nav-icon" />
-        {/* <span>Home</span> */}
-      </button>
+            <Link href="/dashboard/search" className="bottom-nav-item">
+                <Search className="bottom-nav-icon" />
+                {/* <span>Search</span> */}
+            </Link>
 
-      <button
-        className={`bottom-nav-item ${activeTab === "search" ? "active" : ""}`}
-        onClick={() => onTabChange("search")}
-      >
-        <Search className="bottom-nav-icon" />
-        {/* <span>Search</span> */}
-      </button>
+            <Link href="/dashboard/messages" className="bottom-nav-item">
+                <MessageSquare className="bottom-nav-icon" />
+                {/* <span>Messages</span> */}
+            </Link>
 
-      <button
-        className={`bottom-nav-item ${
-          activeTab === "messages" ? "active" : ""
-        }`}
-        onClick={() => onTabChange("messages")}
-      >
-        <MessageSquare className="bottom-nav-icon" />
-        {/* <span>Messages</span> */}
-      </button>
-
-      <Link
-        href="/profile"
-        className={`bottom-nav-item ${activeTab === "profile" ? "active" : ""}`}
-      >
-        <User className="bottom-nav-icon" />
-      </Link>
-    </nav>
-  );
+            <Link href="/profile" className="bottom-nav-item">
+                <User className="bottom-nav-icon" />
+            </Link>
+        </nav>
+    );
 };
 
 export default BottomNav;
