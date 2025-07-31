@@ -1,59 +1,59 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    gap: 30px;
-    min-height: 100dvh;
-    padding: 0 32px min(50%, 86px);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 30px;
+  min-height: 100dvh;
+  padding: 0 32px min(50%, 86px);
 
-    font-size: 1.5rem;
-    text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
 
-    background: linear-gradient(
-        var(--gradient-rotation),
-        var(--color-primary-container),
-        var(--color-surface) var(--gradient-stop)
-    );
+  background: linear-gradient(
+    var(--gradient-rotation),
+    var(--color-primary-container),
+    var(--color-surface) var(--gradient-stop)
+  );
 
-    @media (prefers-reduced-motion: no-preference) {
-        animation: animate-gradient 5s linear infinite alternate;
-    }
+  @media (prefers-reduced-motion: no-preference) {
+    animation: animate-gradient 5s linear infinite alternate;
+  }
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .actions {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .mascot {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @property --gradient-rotation {
-    syntax: "<angle>";
-    initial-value: 140deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 140deg;
+  inherits: false;
 }
 
 @property --gradient-stop {
-    syntax: "<percentage>";
-    initial-value: 55%;
-    inherits: false;
+  syntax: "<percentage>";
+  initial-value: 55%;
+  inherits: false;
 }
 
 @keyframes animate-gradient {
-    from {
-        --gradient-rotation: 140deg;
-        --gradient-stop: 55%;
-    }
-    to {
-        --gradient-rotation: 220deg;
-        --gradient-stop: 90%;
-    }
+  from {
+    --gradient-rotation: 140deg;
+    --gradient-stop: 55%;
+  }
+  to {
+    --gradient-rotation: 220deg;
+    --gradient-stop: 90%;
+  }
 }
