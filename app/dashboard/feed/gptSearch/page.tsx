@@ -1,22 +1,20 @@
 // pages/GptSearch.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./GptSearch.module.css";
 import { GoogleGenAI } from "@google/genai";
 
 const GptSearch = () => {
   const [query, setQuery] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [fullAnswer, setFullAnswer] = useState("");
+  const [typedAnswer, setTypedAnswer] = useState("");
   const [loading, setLoading] = useState(false);
-
-  //   const genAI = new GoogleGenerativeAI(
-  //     process.env.NEXT_PUBLIC_GEMINI_API_KEY || ""
-  //   );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setAnswer("");
+    setTypedAnswer("");
+    setFullAnswer("");
     setLoading(true);
 
     try {
@@ -24,30 +22,46 @@ const GptSearch = () => {
         apiKey: "AIzaSyCEzmk05J35sn0ADAjbX3PPTrRjbl2Pqn0",
       });
 
-      async function main() {
-        const response = await ai.models.generateContent({
-          model: "gemini-2.5-flash",
-          contents:
-            "Act as a content suggestion system so dont give extra reply just give precise reply to this query" +
-            query +
-            "without any other suggestion",
-        });
-        // console.log(response.text);
-        setAnswer(response.text);
-      }
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents:
+          "Act as a content suggestion system so don't give extra reply, just give precise reply to this query: " +
+          query +
+          " without any other suggestion.",
+      });
 
-      main();
+      // Save full answer to start typing animation
+      console.log(response.text);
+
+      setFullAnswer(response.text);
     } catch (error) {
-      setAnswer("Something went wrong. Please try again.");
+      setFullAnswer("Something went wrong. Please try again.");
       console.error(error);
     }
 
     setLoading(false);
   };
 
+  // Typewriter effect
+  useEffect(() => {
+    if (!fullAnswer) return;
+
+    let index = 0;
+    const interval = setInterval(() => {
+      setTypedAnswer((prev) => prev + fullAnswer.charAt(index));
+      index++;
+
+      if (index >= fullAnswer.length) {
+        clearInterval(interval);
+      }
+    }, 25); // Typing speed (ms)
+
+    return () => clearInterval(interval);
+  }, [fullAnswer]);
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Hey i am your Buddy , ask your doubt</h1>
+      <h1 className={styles.heading}>Hey, I am your Buddy. Ask your doubt!</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
@@ -60,10 +74,11 @@ const GptSearch = () => {
           {loading ? "Loading..." : "Ask"}
         </button>
       </form>
-      {answer && (
+
+      {typedAnswer && (
         <div className={styles.answer}>
-          <strong> </strong>
-          <p>{answer}</p>
+          {/* <strong>Answer:</strong> */}
+          <p>{typedAnswer}</p>
         </div>
       )}
     </div>
