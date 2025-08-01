@@ -1,0 +1,387 @@
+/* Container and Layout */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.formContainer {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.backButton {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #e1e5e9;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.backButton:hover {
+    background: #f8f9fa;
+    border-color: #d1d7dd;
+}
+
+.backIcon {
+    width: 16px;
+    height: 16px;
+    color: #6c757d;
+}
+
+.headerContent {
+    flex: 1;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1f36;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Main Content */
+.main {
+    margin-bottom: 32px;
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Input Groups */
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: 16px 16px 16px 48px;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #374151;
+    background: white;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input::placeholder {
+    color: #9ca3af;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: #9ca3af;
+    z-index: 1;
+}
+
+/* OTP Specific */
+.otpInput {
+    padding: 16px;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.otpInfo {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.otpDescription {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0 0 4px 0;
+}
+
+.emailDisplay {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1f36;
+    margin: 0;
+}
+
+.resendSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.resendText {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.resendButton {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.resendButton:hover {
+    color: #5a67d8;
+}
+
+.resendButton:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+/* Password Eye Button */
+.eyeButton {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.eyeButton:hover {
+    color: #6c757d;
+}
+
+.eyeIcon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Password Requirements */
+.passwordRequirements {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: -8px;
+}
+
+.requirementsTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 8px 0;
+}
+
+.requirementsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.requirementsList li {
+    font-size: 13px;
+    color: #6c757d;
+    position: relative;
+    padding-left: 20px;
+}
+
+.requirementsList li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.requirementsList li.requirementMet {
+    color: #28a745;
+}
+
+.requirementsList li.requirementMet::before {
+    content: "✓";
+    color: #28a745;
+}
+
+/* Submit Button */
+.submitButton {
+    margin-top: 8px;
+}
+
+/* Success Step */
+.successContainer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.successIcon {
+    width: 80px;
+    height: 80px;
+    background: #28a745;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+}
+
+.checkIcon {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.successTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1f36;
+    margin: 0 0 12px 0;
+}
+
+.successMessage {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Error Handling */
+.errorContainer {
+    background: #fee;
+    border: 1px solid #fcc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    padding-top: 24px;
+}
+
+.footerText {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.footerLink {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+    color: #5a67d8;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px;
+    }
+
+    .formContainer {
+        padding: 24px;
+        max-width: none;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .input {
+        font-size: 16px;
+        padding: 14px 14px 14px 44px;
+    }
+
+    .inputIcon {
+        left: 14px;
+    }
+
+    .eyeButton {
+        right: 14px;
+    }
+}
