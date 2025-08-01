@@ -14,8 +14,9 @@
     var(--color-primary-container),
     var(--color-surface) var(--gradient-stop)
   ); */
-  background: url("/cover.png");
-  background-size: contain;
+  background: linear-gradient(#ffffff66), url("/cover.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (prefers-reduced-motion: no-preference) {
     animation: animate-gradient 5s linear infinite alternate;
