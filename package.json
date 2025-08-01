@@ -9,6 +9,8 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@google/genai": "^1.0.0",
+        "@google/generative-ai": "^0.24.1",
         "@material-design-icons/font": "^0.14.15",
         "@splidejs/react-splide": "^0.7.12",
         "bcryptjs": "^3.0.2",
