@@ -89,28 +89,23 @@ const FollowingList: React.FC<FollowingListProps> = ({
   };
 
   const handleMessage = (followingId: string) => {
-    // Handle message functionality
     console.log("Send message to:", followingId);
   };
 
   const handleBack = () => {
-    // Handle back navigation
     console.log("Navigate back");
   };
 
   const handleSearch = () => {
-    // Handle search functionality
     console.log("Search following");
   };
 
   const handleMore = () => {
-    // Handle more options
     console.log("More options");
   };
 
   return (
     <div className="following-container">
-      {/* Header */}
       <header className="following-header">
         <div className="header-left">
           <button className="back-btn" onClick={handleBack}>
@@ -130,7 +125,6 @@ const FollowingList: React.FC<FollowingListProps> = ({
         </div>
       </header>
 
-      {/* User Stats */}
       {/* <div className="user-stats">
         <div className="user-avatar-section">
           <img
@@ -165,7 +159,6 @@ const FollowingList: React.FC<FollowingListProps> = ({
         </div>
       </div> */}
 
-      {/* Following List */}
       <div className="following-list">
         <h3 className="following-list-title">Following</h3>
 

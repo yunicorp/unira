@@ -28,9 +28,7 @@ const Settings: React.FC = () => {
   };
 
   const handleSave = () => {
-    // Handle save functionality here
     console.log("Settings saved:", settings);
-    // You can implement API call to save settings
   };
 
   const handleReset = () => {

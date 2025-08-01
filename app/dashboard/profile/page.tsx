@@ -81,22 +81,18 @@ const Profile: React.FC = () => {
   };
 
   const handleFollow = () => {
-    // Handle follow/unfollow logic
     console.log("Follow/Unfollow clicked");
   };
 
   const handleMessage = () => {
-    // Handle message logic
     console.log("Message clicked");
   };
 
   const handleShare = () => {
-    // Handle share functionality
     console.log("Share clicked");
   };
 
   const handleComment = () => {
-    // Handle comment functionality
     console.log("Comment clicked");
   };
 
@@ -167,7 +163,6 @@ const Profile: React.FC = () => {
         </div>
       </header>
 
-      {/* Profile Info Section */}
       <div className="profile-info-section">
         <div className="profile-main-info">
           <div className="profile-avatar-container">
@@ -184,7 +179,6 @@ const Profile: React.FC = () => {
           </div>
         </div>
 
-        {/* Stats Row */}
         <div className="profile-stats-row">
           <div className="stat-box">
             <span className="stat-number">{user.entries}</span>
@@ -209,7 +203,6 @@ const Profile: React.FC = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
         {/* <div className="profile-actions">
           <button className="follow-btn" onClick={handleFollow}>
             <svg
@@ -243,7 +236,6 @@ const Profile: React.FC = () => {
         </div> */}
       </div>
 
-      {/* Tab Navigation */}
       {/* <div className="tab-navigation">
         <button
           className={`tab-btn ${activeTab === "posts" ? "active" : ""}`}
@@ -259,7 +251,6 @@ const Profile: React.FC = () => {
         </button>
       </div> */}
 
-      {/* Content Area */}
       <div className="profile-content">
         {activeTab === "posts" && (
           <div className="posts-section">

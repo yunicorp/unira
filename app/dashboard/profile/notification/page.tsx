@@ -18,9 +18,7 @@ const NotificationBell: React.FC = () => {
   const [unreadCount, setUnreadCount] = useState(0);
   const notificationRef = useRef<HTMLDivElement>(null);
 
-  // Simulating fetching notifications from an API
   useEffect(() => {
-    // This would typically be an API call
     const fetchNotifications = () => {
       const currentTime = new Date().toISOString();
       const sampleNotifications: Notification[] = [
