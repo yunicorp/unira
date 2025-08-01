@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Users, Camera, MessageSquare } from "lucide-react";
+import { Users, Camera, MessageSquare, Store } from "lucide-react";
 import Post from "../../_components/post";
 import Link from "next/link";
 import "./style.css";
+import { useSelector } from "react-redux";
 
 type PostType = {
   id: string;
@@ -26,6 +27,8 @@ type PostType = {
 const Feed = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const reduxSelector = useSelector((store: any) => store.post);
 
   // Mock data - replace with actual API calls
   useEffect(() => {
@@ -98,7 +101,9 @@ const Feed = () => {
 
     // Simulate API loading
     setTimeout(() => {
-      setPosts(mockPosts);
+      setPosts(reduxSelector);
+      // setPosts(mockPosts);
+
       setLoading(false);
     }, 1000);
   }, []);
@@ -175,7 +180,7 @@ const Feed = () => {
               renderLoadingSkeleton()
             ) : (
               <div className="feed-posts">
-                {posts.map((post) => (
+                {posts.toReversed().map((post) => (
                   <Post
                     key={post.id}
                     post={post}
