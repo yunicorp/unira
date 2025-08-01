@@ -128,11 +128,6 @@ const Feed = () => {
         );
     };
 
-    const handleNewPost = () => {
-        console.log("Create new post");
-        // Implement new post functionality
-    };
-
     const renderLoadingSkeleton = () => (
         <div className="loading-container">
             {[1, 2, 3].map(i => (
@@ -195,7 +190,7 @@ const Feed = () => {
                             <Search className="feed-search-icon" />
                         </button>
 
-                        <button onClick={handleNewPost} className="feed-post-btn">
+                        <button onClick={() => router.push("/post")} className="feed-post-btn">
                             <Plus className="feed-post-icon" />
                             <span>Post</span>
                         </button>
