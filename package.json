@@ -12,6 +12,7 @@
         "@google/genai": "^1.0.0",
         "@google/generative-ai": "^0.24.1",
         "@material-design-icons/font": "^0.14.15",
+        "@reduxjs/toolkit": "^2.8.2",
         "@splidejs/react-splide": "^0.7.12",
         "bcryptjs": "^3.0.2",
         "jose": "^6.0.10",
@@ -19,7 +20,8 @@
         "mongoose": "^8.13.2",
         "next": "15.2.2",
         "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "react-dom": "^19.0.0",
+        "react-redux": "^9.2.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
